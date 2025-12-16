@@ -4155,3 +4155,58 @@ void cProtocol_1_21_7::SendTags(void)
 		// indent
 	}
 }
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+//  cProtocol_1_21_9:
+
+cProtocol::Version cProtocol_1_21_9::GetProtocolVersion() const
+{
+	return Version::v1_21_9;
+}
+
+
+
+
+
+void cProtocol_1_21_9::SendSelectKnownPacks()
+{
+	{
+		cPacketizer Pkt(*this, pktSelectKnownPacks);
+		Pkt.WriteVarInt32(2);
+		Pkt.WriteString("minecraft");
+		Pkt.WriteString("core");
+		Pkt.WriteString("1.21.9");
+		Pkt.WriteString("minecraft");
+		Pkt.WriteString("core");
+		Pkt.WriteString("1.21.10");
+	}
+}
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+//  cProtocol_1_21_11:
+
+cProtocol::Version cProtocol_1_21_11::GetProtocolVersion() const
+{
+	return Version::v1_21_11;
+}
+
+
+
+
+
+void cProtocol_1_21_11::SendSelectKnownPacks()
+{
+	{
+		cPacketizer Pkt(*this, pktSelectKnownPacks);
+		Pkt.WriteVarInt32(2);
+		Pkt.WriteString("minecraft");
+		Pkt.WriteString("core");
+		Pkt.WriteString("1.21.11");
+	}
+}

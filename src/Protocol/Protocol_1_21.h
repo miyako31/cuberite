@@ -177,3 +177,41 @@ protected:
 	virtual void SendSelectKnownPacks() override;
 	virtual Version GetProtocolVersion() const override;
 };
+
+
+
+
+
+class cProtocol_1_21_9
+	: public cProtocol_1_21_7
+{
+	using Super = cProtocol_1_21_7;
+public:
+
+	using Super::Super;
+
+protected:
+	// virtual void SendTags(void) override;
+
+	virtual void SendSelectKnownPacks() override;
+	virtual Version GetProtocolVersion() const override;
+};
+
+
+
+
+
+class cProtocol_1_21_11
+	: public cProtocol_1_21_9
+{
+	using Super = cProtocol_1_21_9;
+public:
+
+	using Super::Super;
+
+protected:
+	// virtual void SendTags(void) override;
+
+	virtual void SendSelectKnownPacks() override;
+	virtual Version GetProtocolVersion() const override;
+};
