@@ -192,16 +192,6 @@ add_test(
 	COMMAND BasicGeneratorTest
 )
 
-# Necessary for some tests here to run.
-# Otherwise they crash with the error STATUS_DLL_NOT_FOUND (0xC0000135) because they can't find the lua51.dll
-
-if(WIN32)
-	add_custom_command(
-		TARGET BasicGeneratorTest  POST_BUILD
-		COMMAND ${CMAKE_COMMAND} -E copy
-		${CMAKE_BINARY_DIR}/Server/lua51.dll # Source
-		${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}/) # Destination
-endif()
 
 
 
@@ -213,7 +203,10 @@ add_executable(LoadablePieces
 	Test.cubeset
 	Test1.schematic
 )
-target_link_libraries(LoadablePieces GeneratorTestingSupport mbedtls)
+target_link_libraries(LoadablePieces GeneratorTestingSupport)
+if (WIN32)
+	target_link_libraries(LoadablePieces ws2_32)
+endif()
 add_test(
 	NAME LoadablePieces-test
 	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
@@ -229,6 +222,9 @@ add_executable(PieceRotation
 	PieceRotationTest.cpp
 )
 target_link_libraries(PieceRotation GeneratorTestingSupport mbedtls)
+if (WIN32)
+	target_link_libraries(PieceRotation ws2_32)
+endif()
 add_test(
 	NAME PieceRotation-test
 	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
@@ -244,6 +240,9 @@ add_executable(PieceGeneratorBFSTree
 	PieceGeneratorBFSTreeTest.cpp
 )
 target_link_libraries(PieceGeneratorBFSTree GeneratorTestingSupport mbedtls)
+if (WIN32)
+    target_link_libraries(PieceGeneratorBFSTree ws2_32)
+endif()
 add_test(
 	NAME PieceGeneratorBFSTree-test
 	WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/Server/Prefabs/PieceStructures

@@ -51,6 +51,12 @@ add_executable(NoiseSpeedTest
 	${SHARED_HDR}
 )
 
+target_link_libraries(NoiseSpeedTest fmt::fmt)
+
+if (WIN32)
+	target_link_libraries(NoiseSpeedTest ws2_32)
+endif()
+
 if(NOT WIN32)
 	target_compile_options(NoiseSpeedTest PRIVATE -Wno-switch)
 	target_compile_options(NoiseSpeedTest PRIVATE -Wno-switch-default)
@@ -58,8 +64,6 @@ if(NOT WIN32)
 	target_compile_options(NoiseSpeedTest PRIVATE -Wno-duplicate-enum)
 	target_compile_options(NoiseSpeedTest PRIVATE -Wno-float-equal)
 endif()
-
-target_link_libraries(NoiseSpeedTest fmt::fmt mbedtls)
 
 set_target_properties(
 	NoiseSpeedTest
