@@ -782,11 +782,12 @@ void cChunk::MoveEntityToNewChunk(OwnedEntity a_Entity)
 	cChunk * Neighbor = GetNeighborChunk(a_Entity->GetChunkX() * cChunkDef::Width, a_Entity->GetChunkZ() * cChunkDef::Width);
 	if (Neighbor == nullptr)
 	{
-		LOGWARNING("%s: Entity at %p (%s, ID %d) moving to a non-existent Chunk.",
+		LOGWARNING("%s: Entity at %p (%s, ID %d) moving to a non-existent Chunk. Queueing chunk for loading.",
 			__FUNCTION__, static_cast<void *>(a_Entity.get()), a_Entity->GetClass(), a_Entity->GetUniqueID()
 		);
 
-		Neighbor = &m_ChunkMap->ConstructChunk(a_Entity->GetChunkX(), a_Entity->GetChunkZ());
+		// Use GetChunk instead of ConstructChunk to ensure the chunk is queued for loading / generation when needed.
+		Neighbor = &m_ChunkMap->GetChunk(a_Entity->GetChunkX(), a_Entity->GetChunkZ());
 	}
 
 	ASSERT(Neighbor != this);  // Moving into the same Chunk? wtf?
