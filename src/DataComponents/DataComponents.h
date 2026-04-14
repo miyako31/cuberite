@@ -84,7 +84,7 @@ namespace DataComponents
 
 	//  Original version taken from here: https://gist.github.com/nnaumenko/1db96f7e187979a057ee7ad757dee4f2
 	template <typename T, size_t I = 0>
-	static constexpr size_t GetIndexOfDataComponent()
+	constexpr size_t GetIndexOfDataComponent()
 	{
 		if constexpr (I >= std::variant_size_v<DataComponent>)
 		{

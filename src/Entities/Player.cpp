@@ -1758,7 +1758,7 @@ void cPlayer::TossEquippedItem(char a_Amount)
 			NewAmount = GetInventory().GetEquippedItem().m_ItemCount;  // Drop only what's there
 		}
 
-		GetInventory().GetHotbarGrid().ChangeSlotCount(GetInventory().GetEquippedSlotNum() /* Returns hotbar subslot, which HotbarGrid takes */, -a_Amount);
+		GetInventory().GetHotbarGrid().ChangeSlotCount(GetInventory().GetEquippedSlotNum() /* Returns hotbar subslot, which HotbarGrid takes */, static_cast<char>(-a_Amount));
 
 		DroppedItem.m_ItemCount = NewAmount;
 		Drops.push_back(DroppedItem);

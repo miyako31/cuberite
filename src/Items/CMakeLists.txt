@@ -1,3 +1,15 @@
+target_sources(${CMAKE_PROJECT_NAME}
+		PUBLIC
+		FILE_SET CXX_MODULES FILES
+		ItemWool.cppm
+)
+
+set_source_files_properties(
+		ItemWool.cppm
+		PROPERTIES
+		SKIP_PRECOMPILE_HEADERS ON
+)
+
 target_sources(
 	${CMAKE_PROJECT_NAME} PRIVATE
 
@@ -82,7 +94,6 @@ target_sources(
 	ItemTripwireHook.h
 	ItemTripwire.h
 	ItemVines.h
-	ItemWool.h
 	SimplePlaceableItemHandler.h
 	ItemWood.h
 	ItemCocoaBeans.h

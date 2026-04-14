@@ -53,7 +53,7 @@ set_target_properties(${CMAKE_PROJECT_NAME} PROPERTIES VS_DEBUGGER_WORKING_DIREC
 # Enable PCH and jumbo builds on supporting CMake:
 if (CMAKE_VERSION VERSION_GREATER_EQUAL "3.16")
 	if (PRECOMPILE_HEADERS)
-		target_precompile_headers(${CMAKE_PROJECT_NAME} PRIVATE src/Globals.h)
+		#target_precompile_headers(${CMAKE_PROJECT_NAME} PRIVATE src/Globals.h)
 	endif()
 
 	set_target_properties(${CMAKE_PROJECT_NAME} PROPERTIES UNITY_BUILD ${UNITY_BUILDS})

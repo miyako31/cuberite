@@ -90,7 +90,7 @@
 #include "ItemTripwire.h"
 #include "ItemTripwireHook.h"
 #include "ItemVines.h"
-#include "ItemWool.h"
+
 #include "ItemFence.h"
 #include "ItemWood.h"
 
@@ -99,6 +99,7 @@
 #include "../Registries/BlockItemConverter.h"
 #include "../Protocol/Palettes/Upgrade.h"
 
+import Item.Wool;
 
 namespace
 {

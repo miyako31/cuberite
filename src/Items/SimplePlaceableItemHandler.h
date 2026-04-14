@@ -1,8 +1,8 @@
 #pragma once
 
 #include "ItemHandler.h"
-
-
+#include "../Entities/Player.h"
+#include "../Registries/BlockItemConverter.h"
 
 #ifdef __clang__
 #pragma clang diagnostic push

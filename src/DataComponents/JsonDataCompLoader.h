@@ -2,6 +2,7 @@
 // Created by MightyFilipns on 01 / 04 / 25.
 //
 #pragma once
+#include "../Globals.h"
 #include "JsonUtils.h"
 #include "json/value.h"
 

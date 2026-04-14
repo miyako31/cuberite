@@ -139,7 +139,9 @@ function(set_exe_flags TARGET)
 		-fsigned-char
 
 		# We support non-IEEE 754 FPUs so can make no guarantees about error:
-		-ffast-math
+		-fno-math-errno
+		-funsafe-math-optimizations
+		-fno-rounding-math
 
 		# All warnings:
 		-Wall -Wextra
@@ -158,6 +160,12 @@ function(set_exe_flags TARGET)
 			-Wno-double-promotion
 			-Wno-switch-default
 			-Wno-switch
+			-Wno-nrvo
+			-Wno-shadow-header
+			-Wno-duplicate-enum
+			-Wno-float-equal
+			-Wno-undefined-func-template
+			-Wno-c2y-extensions
 
 			# This is a pretty useless warning, we've already got -Wswitch which is what we need:
 			-Wno-switch-enum
