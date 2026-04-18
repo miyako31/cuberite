@@ -4,9 +4,9 @@
 #include "../BlockArea.h"
 
 #include "../Registries/BlockItemConverter.h"
-
-
-
+#include "../Chunk.h"
+#include "ChunkInterface.h"
+#include "../World.h"
 
 // Leaves can be this many blocks that away (inclusive) from the log not to decay
 #define LEAVES_CHECK_DISTANCE 6

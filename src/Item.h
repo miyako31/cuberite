@@ -10,6 +10,7 @@
 
 #pragma once
 
+#include "Globals.h"
 #include "Defines.h"
 #include "Enchantments.h"
 #include "WorldStorage/FireworksSerializer.h"

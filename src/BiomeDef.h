@@ -8,6 +8,7 @@
 
 
 #pragma once
+#include "Globals.h"
 
 // tolua_begin
 /** Biome IDs

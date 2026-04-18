@@ -1,4 +1,5 @@
 #pragma once
+#include <cstdint>
 
 enum class Item : uint_least16_t
 {

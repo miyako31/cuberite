@@ -15,8 +15,6 @@
 #include "../MonsterConfig.h"
 #include "../BoundingBox.h"
 
-#include "Items/ItemSpawnEgg.h"
-
 #include "../Chunk.h"
 #include "../FastRandom.h"
 
@@ -25,6 +23,7 @@
 #include "../Protocol/Palettes/Upgrade.h"
 #include "../Blocks/BlockLeaves.h"
 
+import Item.SpawnEgg;
 
 /** Map for eType <-> string
 Needs to be alpha-sorted by the strings, because binary search is used in StringToMobType()

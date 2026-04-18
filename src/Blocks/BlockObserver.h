@@ -3,7 +3,7 @@
 
 #include "BlockHandler.h"
 #include "Mixins/Mixins.h"
-
+#include "ChunkInterface.h"
 
 class cBlockObserverHandler final :
 	public cBlockHandler

@@ -5,7 +5,7 @@
 #include "../World.h"
 #include "../Entities/Player.h"
 #include "../Items/ItemHandler.h"
-#include "../Items/ItemSpawnEgg.h"
+import Item.SpawnEgg;
 
 
 

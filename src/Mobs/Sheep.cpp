@@ -6,7 +6,7 @@
 #include "../World.h"
 #include "../EffectID.h"
 #include "../FastRandom.h"
-#include "Items/ItemDye.h"
+import Item.Dye;
 
 
 cSheep::cSheep(int a_Color) :

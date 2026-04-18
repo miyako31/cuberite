@@ -4,9 +4,9 @@
 #include "BlockHandler.h"
 #include "Mixins/Mixins.h"
 #include "../EffectID.h"
-
-
-
+#include "ChunkInterface.h"
+#include "WorldInterface.h"
+#include "../Entities/Player.h"
 
 class cBlockTrapdoorHandler final :
 	public cBlockHandler

@@ -1,0 +1,40 @@
+module;
+
+
+#include "../World.h"
+export module Item.Soup;
+import Item.FoodHandler;
+
+
+
+
+export class cItemSoupHandler final:
+	public cItemFoodHandler
+{
+	using Super = cItemFoodHandler;
+
+public:
+
+	constexpr cItemSoupHandler(Item a_ItemType, FoodInfo a_FoodInfo):
+		Super(a_ItemType, a_FoodInfo)
+	{
+
+	}
+
+	virtual bool EatItem(cPlayer * a_Player, cItem * a_Item) const override
+	{
+		// Skip over food handler, which does removal for us.
+		if (!cItemHandler::EatItem(a_Player, a_Item))
+		{
+			return false;
+		}
+
+		if (!a_Player->IsGameModeCreative())
+		{
+			a_Player->ReplaceOneEquippedItemTossRest(cItem(Item::Bowl));
+		}
+
+		return true;
+	}
+
+};

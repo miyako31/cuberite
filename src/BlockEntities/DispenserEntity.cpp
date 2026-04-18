@@ -12,9 +12,8 @@
 #include "../Entities/Boat.h"
 #include "../Entities/ProjectileEntity.h"
 #include "../Simulator/FluidSimulator.h"
-#include "../Items/ItemSpawnEgg.h"
-#include "../Items/ItemDye.h"
-
+import Item.SpawnEgg;
+import Item.Dye;
 
 
 cDispenserEntity::cDispenserEntity(BlockState a_Block, Vector3i a_Pos, cWorld * a_World):

@@ -1,7 +1,12 @@
 #pragma once
 
 #include "BlockHandler.h"
-
+#include "BlockInfo.h"
+#include "ChunkInterface.h"
+#include "Chunk.h"
+#include "../Registries/BlockItemConverter.h"
+#include "BlockAir.h"
+#include "BlockPluginInterface.h"
 
 class cBlockVinesHandler final :
 	public cBlockHandler

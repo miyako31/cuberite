@@ -1,9 +1,7 @@
 
 #pragma once
 #include "Registries/Items.h"
-#include "WorldStorage/NamespaceSerializer.h"
-
-
+// #include "WorldStorage/NamespaceSerializer.h"
 
 
 /** List of slot numbers, used for inventory-painting */

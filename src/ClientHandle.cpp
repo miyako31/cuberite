@@ -34,12 +34,12 @@
 #include "Protocol/Authenticator.h"
 #include "Protocol/Protocol.h"
 #include "CompositeChat.h"
-#include "Items/ItemSword.h"
 
 #include "mbedtls/md5.h"
 
 #include <ranges>
 
+import Item.Sword;
 
 /** Maximum number of explosions to send this tick, server will start dropping if exceeded. */
 #define MAX_EXPLOSIONS_PER_TICK 20

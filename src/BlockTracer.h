@@ -12,7 +12,7 @@
 
 
 
-
+#include "Globals.h"
 #include "Defines.h"
 #include "ChunkDef.h"
 

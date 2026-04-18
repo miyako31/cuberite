@@ -1,6 +1,7 @@
 
 #pragma once
 
+#include "../Globals.h"
 #include "../Defines.h"
 #include "../Item.h"
 #include "../Registries/Items.h"

@@ -1,6 +1,7 @@
 
 #pragma once
 
+#include "Globals.h"
 #include "Defines.h"
 #include "FunctionRef.h"
 #include "HTTP/HTTPServer.h"

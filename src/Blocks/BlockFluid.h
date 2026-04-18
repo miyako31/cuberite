@@ -4,6 +4,7 @@
 #include "BlockHandler.h"
 #include "../Simulator/FireSimulator.h"
 #include "BlockInfo.h"
+#include "Chunk.h"
 
 #define ILLEGAL_FALLOFF std::numeric_limits<unsigned char>::max()
 

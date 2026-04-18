@@ -4,7 +4,8 @@
 #include "BlockHandler.h"
 #include "BlockInfo.h"
 #include "Mixins/Mixins.h"
-
+#include "ChunkInterface.h"
+#include "../Chunk.h"
 
 
 

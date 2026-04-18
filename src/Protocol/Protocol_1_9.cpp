@@ -41,15 +41,13 @@ Implements the 1.9 protocol classes:
 #include "../Entities/FireworkEntity.h"
 #include "../Entities/SplashPotionEntity.h"
 
-#include "../Items/ItemSpawnEgg.h"
-
 #include "../Mobs/IncludeAllMonsters.h"
 #include "../UI/HorseWindow.h"
 
 #include "../BlockEntities/MobSpawnerEntity.h"
 
 
-
+import Item.SpawnEgg;
 
 
 // Value for main hand in Hand parameter for Protocol 1.9.

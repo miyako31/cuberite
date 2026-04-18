@@ -4,10 +4,11 @@
 #include "../BlockArea.h"
 #include "../Entities/Player.h"
 #include "Mixins/Mixins.h"
-
-
-
-
+#include  "BlockEntities/BlockEntity.h"
+#include "Chunk.h"
+#include "ChunkInterface.h"
+#include "WorldInterface.h"
+#include "BlockEntity.h"
 
 class cBlockChestHandler final :
 	public cBlockEntityHandler
