@@ -17,7 +17,7 @@
 	ignore = dirty
 [submodule "lib/libevent"]
 	path = lib/libevent
-	url = https://github.com/cuberite/libevent.git
+	url = https://github.com/libevent/libevent.git
 	ignore = dirty
 [submodule "lib/jsoncpp"]
 	path = lib/jsoncpp

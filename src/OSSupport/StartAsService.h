@@ -21,7 +21,7 @@ public:
 	{
 		SERVICE_TABLE_ENTRY ServiceTable[] =
 		{
-			{ g_ServiceName, (LPSERVICE_MAIN_FUNCTION)serviceMain<UniversalMain> },
+			{ reinterpret_cast<char *>(&g_ServiceName), (LPSERVICE_MAIN_FUNCTION)serviceMain<UniversalMain> },
 			{ nullptr, nullptr }
 		};
 
@@ -71,7 +71,7 @@ private:
 		wchar_t applicationDirectory[MAX_PATH];
 
 		// Get this binary's file path:
-		if (GetModuleFileName(nullptr, applicationFilename, std::size(applicationFilename)) == 0)
+		if (GetModuleFileNameW(nullptr, applicationFilename, std::size(applicationFilename)) == 0)
 		{
 			serviceSetState(0, SERVICE_STOPPED, GetLastError());
 			return;
@@ -92,14 +92,14 @@ private:
 
 		// Services are run by the SCM, and inherit its working directory - usually System32.
 		// Set the working directory to the same location as the binary.
-		if (SetCurrentDirectory(applicationDirectory) == FALSE)
+		if (SetCurrentDirectoryW(applicationDirectory) == FALSE)
 		{
 			serviceSetState(0, SERVICE_STOPPED, GetLastError());
 			return;
 		}
 
 
-		g_StatusHandle = RegisterServiceCtrlHandler(g_ServiceName, serviceCtrlHandler);
+		g_StatusHandle = RegisterServiceCtrlHandlerW(g_ServiceName, serviceCtrlHandler);
 		if (g_StatusHandle == nullptr)
 		{
 			OutputDebugStringA("RegisterServiceCtrlHandler() failed\n");
@@ -113,7 +113,7 @@ private:
 		char * MultibyteArgV[] = { MultibyteArgV0 };
 
 		const auto OutputSize = std::size(MultibyteArgV0);
-		const auto TranslateResult = std::wcstombs(MultibyteArgV0, argv[0], OutputSize);
+		const auto TranslateResult = std::wcstombs(MultibyteArgV0, reinterpret_cast<const wchar_t *>(argv[0]), OutputSize);
 
 		if (TranslateResult == static_cast<size_t>(-1))
 		{

@@ -45,7 +45,6 @@ NOTE: 2017-06-16 madmaxoft: Removed the legacy VS code and generally cleaned up
 #ifdef _WIN32
 
 #include <tchar.h>
-#pragma comment(lib, "version.lib")  // for "VerQueryValue"
 #pragma warning(disable:4826)
 #pragma warning(disable:4996)  // "GetVersionEx" was declared deprecated
 
@@ -509,7 +508,7 @@ private:
 			return FALSE;
 		}
 
-		hMods = (HMODULE*)malloc(sizeof(HMODULE) * (TTBUFLEN / sizeof HMODULE));
+		hMods = (HMODULE*)malloc(sizeof(HMODULE) * (TTBUFLEN / sizeof(HMODULE)));
 		tt = (char*)malloc(sizeof(char) * TTBUFLEN);
 		tt2 = (char*)malloc(sizeof(char) * TTBUFLEN);
 		if ((hMods == nullptr) || (tt == nullptr) || (tt2 == nullptr))
@@ -601,7 +600,7 @@ private:
 					LPVOID vData = malloc(dwSize);
 					if (vData != nullptr)
 					{
-						if (GetFileVersionInfoA(szImg, dwHandle, dwSize, vData) != 0)
+						if (GetFileVersionInfo(szImg, dwHandle, dwSize, vData) != 0)
 						{
 							UINT len;
 							TCHAR szSubBlock[] = _T("\\");

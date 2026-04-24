@@ -149,6 +149,14 @@ function(set_exe_flags TARGET)
 		# Excessive amount of logspam, disable for now:
 		-Wno-unused-parameter
 	)
+	# Needed for modules to work
+	# TODO: removed in the future
+	if(CMAKE_CXX_COMPILER_ID STREQUAL "GCC")
+		target_compile_options(
+				${TARGET} PRIVATE
+				-fpermissive
+		)
+	endif ()
 
 	if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
 		target_compile_options(

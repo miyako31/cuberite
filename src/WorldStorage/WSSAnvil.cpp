@@ -191,7 +191,7 @@ void cWSSAnvil::ChunkLoadFailed(const cChunkCoords a_ChunkCoords, const AString 
 	cFile::CreateFolder(OffloadFileName);
 	auto t = time(nullptr);
 	struct tm stm;
-	#ifdef _MSC_VER
+	#ifdef WIN32
 		localtime_s(&stm, &t);
 	#else
 		localtime_r(&t, &stm);

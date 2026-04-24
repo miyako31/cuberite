@@ -9,11 +9,11 @@ function(build_dependencies)
 	set(SQLITECPP_USE_STATIC_RUNTIME   OFF CACHE BOOL "Use MSVC static runtime (default for internal googletest).")
 
 	# Set options for LibEvent, disable all their tests and benchmarks:
-	set(EVENT__DISABLE_OPENSSL   YES CACHE BOOL   "Disable OpenSSL in LibEvent")
-	set(EVENT__DISABLE_BENCHMARK YES CACHE BOOL   "Disable LibEvent benchmarks")
-	set(EVENT__DISABLE_TESTS     YES CACHE BOOL   "Disable LibEvent tests")
-	set(EVENT__DISABLE_REGRESS   YES CACHE BOOL   "Disable LibEvent regression tests")
-	set(EVENT__DISABLE_SAMPLES   YES CACHE BOOL   "Disable LibEvent samples")
+	set(EVENT__DISABLE_OPENSSL   ON CACHE BOOL   "Disable OpenSSL in LibEvent")
+	set(EVENT__DISABLE_BENCHMARK ON CACHE BOOL   "Disable LibEvent benchmarks")
+	set(EVENT__DISABLE_TESTS     ON CACHE BOOL   "Disable LibEvent tests")
+	set(EVENT__DISABLE_REGRESS   ON CACHE BOOL   "Disable LibEvent regression tests")
+	set(EVENT__DISABLE_SAMPLES   ON CACHE BOOL   "Disable LibEvent samples")
 	set(EVENT__LIBRARY_TYPE "STATIC" CACHE STRING "Use static LibEvent libraries")
 
 	# Set options for JsonCPP, disabling all of their tests:
@@ -75,7 +75,7 @@ function(link_dependencies TARGET)
 
 	# Link process information, multimedia (for sleep resolution) libraries:
 	if (WIN32)
-		target_link_libraries(${TARGET} PRIVATE Psapi.lib Winmm.lib)
+		target_link_libraries(${TARGET} PRIVATE Psapi.lib Winmm.lib Version.lib)
 	endif()
 
 	# Special case handling for libevent pthreads and filesystem lib:

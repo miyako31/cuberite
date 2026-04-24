@@ -16,7 +16,7 @@ static void WriteLogOpener(fmt::memory_buffer & Buffer)
 	const time_t rawtime = time(nullptr);
 
 	struct tm timeinfo;
-#ifdef _MSC_VER
+#ifdef WIN32
 	localtime_s(&timeinfo, &rawtime);
 #else
 	localtime_r(&rawtime, &timeinfo);
