@@ -4,9 +4,8 @@ module;
 #include "ItemHandler.h"
 #include "../World.h"
 #include "../Entities/Player.h"
-#include "../Blocks/BlockCocoaPod.h"
 export module Item.Dye;
-
+import Block.CocoaPod;
 
 
 

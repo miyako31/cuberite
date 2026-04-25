@@ -2,9 +2,9 @@ module;
 
 
 #include "ItemHandler.h"
-#include "../Blocks/BlockRedstoneRepeater.h"
-import Item.SimplePlaceableItemHandler;
 export module Item.Repeater;
+import Item.SimplePlaceableItemHandler;
+import Block.RedstoneRepeater;
 
 
 

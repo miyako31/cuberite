@@ -1,8 +1,8 @@
 
 #pragma once
 
-#include "../../Blocks/BlockButton.h"
-#include "../../Blocks/BlockLever.h"
+import Block.Button;
+import Block.Lever;
 
 
 

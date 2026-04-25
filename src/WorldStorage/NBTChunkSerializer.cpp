@@ -12,7 +12,6 @@
 #include "../UUID.h"
 #include "../BlockInfo.h"
 #include "FastNBT.h"
-#include "../Blocks/BlockAnvil.h"
 
 #include "../BlockEntities/BannerEntity.h"
 #include "../BlockEntities/BeaconEntity.h"
@@ -56,6 +55,7 @@
 
 #include "JsonUtils.h"
 
+import Block.Anvil;
 
 /** Collects and stores the chunk data via the cChunkDataCallback interface */
 class SerializerCollector final :

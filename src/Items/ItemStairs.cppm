@@ -1,13 +1,12 @@
 module;
 
 
-#include "Blocks/BlockStairs.h"
 #include "Entities/Player.h"
 #include "Items/ItemHandler.h"
 #include "Registries/BlockItemConverter.h"
 #include "Protocol/Palettes/Upgrade.h"
 export module Item.Stairs;
-
+import Block.Slab;
 
 
 

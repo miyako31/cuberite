@@ -1,6 +1,6 @@
 
 #pragma once
-#include "Blocks/BlockFenceGate.h"
+import Block.FenceGate;
 
 
 

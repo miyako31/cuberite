@@ -3,10 +3,9 @@
 #include "FluidSimulator.h"
 #include "World.h"
 #include "Chunk.h"
-#include "Blocks/BlockFluid.h"
 #include "BlockInfo.h"
 
-
+import Block.Fluid;
 
 
 cFluidSimulator::cFluidSimulator(cWorld & a_World, BlockType a_Fluid, unsigned char a_StationaryFlowValue) :

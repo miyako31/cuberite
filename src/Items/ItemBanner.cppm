@@ -5,9 +5,8 @@ module;
 #include "../BlockEntities/BannerEntity.h"
 #include "../Blocks/ChunkInterface.h"
 #include "../Blocks/BlockHandler.h"
-#include "../Blocks/BlockStandingBanner.h"
 export module Item.Banner;
-
+import Block.StandingBanner;
 
 
 

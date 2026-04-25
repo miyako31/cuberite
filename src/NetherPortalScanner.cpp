@@ -5,7 +5,7 @@
 #include "BlockInfo.h"
 #include "Entities/Entity.h"
 #include "World.h"
-#include "Blocks/BlockAir.h"
+import Block.Air;
 
 
 

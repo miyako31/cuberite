@@ -1,10 +1,9 @@
 module;
 
 #include "ItemHandler.h"
-#include "Blocks/BlockLadder.h"
 export module Item.Ladder;
 import Item.SimplePlaceableItemHandler;
-
+import Block.Ladder;
 
 
 

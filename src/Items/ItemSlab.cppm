@@ -1,12 +1,11 @@
 module;
 
 
-#include "Blocks/BlockSlab.h"
 #include "Items/ItemHandler.h"
 #include "Protocol/Palettes/Upgrade.h"
 #include "Registries/BlockItemConverter.h"
 export module Item.Slab;
-
+import Block.Slab;
 
 
 

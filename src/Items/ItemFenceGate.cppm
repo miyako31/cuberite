@@ -2,13 +2,12 @@ module;
 
 
 #include "ItemHandler.h"
-#include "Blocks/BlockFenceGate.h"
 #include "Registries/BlockItemConverter.h"
 #include "../Entities/Player.h"
 #include "../Blocks/WorldInterface.h"
 export module Item.FenceGate;
 import Item.SimplePlaceableItemHandler;
-
+import Block.FenceGate;
 
 
 

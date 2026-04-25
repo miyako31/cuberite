@@ -2,10 +2,9 @@ module;
 
 
 #include "ItemHandler.h"
-#include "../Blocks/BlockComparator.h"
 export module Item.Comparator;
 import Item.SimplePlaceableItemHandler;
-
+import Block.Comparator;
 
 
 

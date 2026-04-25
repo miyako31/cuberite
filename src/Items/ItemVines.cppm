@@ -1,12 +1,12 @@
 module;
 
 
-#include "Blocks/BlockVines.h"
+
 #include "Items/ItemHandler.h"
-#
 
 export module Item.Vines;
 import Item.SimplePlaceableItemHandler;
+import Block.Vines;
 
 
 

@@ -1,10 +1,9 @@
 module;
 
 #include "ItemHandler.h"
-#include "Blocks/BlockEndPortalFrame.h"
 export module Item.EndPortalFrame;
 import Item.SimplePlaceableItemHandler;
-
+import Block.EndPortalFrame;
 
 
 

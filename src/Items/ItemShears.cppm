@@ -4,10 +4,9 @@ module;
 #include "ItemHandler.h"
 #include "../World.h"
 #include "../Entities/Player.h"
-#include "../Blocks/BlockWool.h"
-#include "../Blocks/BlockLeaves.h"
 export module Item.Shears;
-
+import Block.Wool;
+import Block.Leaves;
 
 
 

@@ -1,7 +1,7 @@
 
 #pragma once
 
-#include "../../Blocks/BlockComparator.h"
+import Block.Comparator;
 
 
 

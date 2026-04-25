@@ -7,13 +7,13 @@
 #include "../Defines.h"
 #include "../World.h"
 #include "../Blocks/ChunkInterface.h"
-#include "../Blocks/BlockAir.h"
-#include "../Blocks/BlockRail.h"
 #include "../Entities/Boat.h"
 #include "../Entities/ProjectileEntity.h"
 #include "../Simulator/FluidSimulator.h"
 import Item.SpawnEgg;
 import Item.Dye;
+import Block.Air;
+import Block.Rail;
 
 
 cDispenserEntity::cDispenserEntity(BlockState a_Block, Vector3i a_Pos, cWorld * a_World):

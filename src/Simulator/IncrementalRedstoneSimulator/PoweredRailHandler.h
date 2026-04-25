@@ -1,6 +1,6 @@
 
 #pragma once
-#include "../../Blocks/BlockRail.h"
+import Block.Rail;
 
 
 

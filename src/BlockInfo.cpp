@@ -4,7 +4,7 @@
 #include "BlockType.h"
 
 #include "Blocks/BlockHandler.h"
-#include "Blocks/BlockSlab.h"
+import Block.Slab;
 
 
 

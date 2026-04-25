@@ -4,9 +4,8 @@ module;
 #include "ItemHandler.h"
 #include "../Entities/Player.h"
 #include "../LineBlockTracer.h"
-#include "Blocks/BlockFluid.h"
 export module Item.Lilypad;
-
+import Block.Fluid;
 
 
 

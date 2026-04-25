@@ -2,11 +2,10 @@ module;
 
 
 #include "ItemHandler.h"
-#include "Blocks/BlockEnderChest.h"
 #include "../Entities/Player.h"
 export module Item.EnderChest;
 import Item.SimplePlaceableItemHandler;
-
+import Block.EnderChest;
 
 
 

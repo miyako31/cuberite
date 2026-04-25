@@ -2,11 +2,11 @@ module;
 
 
 #include "ItemHandler.h"
-#include "Blocks/BlockTorch.h"
+#include "Registries/BlockItemConverter.h"
 
 export module Item.Torch;
 import Item.SimplePlaceableItemHandler;
-
+import Block.Torch;
 
 
 

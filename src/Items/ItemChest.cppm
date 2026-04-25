@@ -1,11 +1,10 @@
 module;
 
 #include "ItemHandler.h"
-#include "Blocks/BlockChest.h"
 #include "Registries/BlockItemConverter.h"
 export module Item.Chest;
 import Item.SimplePlaceableItemHandler;
-
+import Block.Chest;
 
 
 

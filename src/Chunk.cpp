@@ -28,14 +28,13 @@
 #include "SetChunkData.h"
 #include "BoundingBox.h"
 #include "Blocks/ChunkInterface.h"
-#include "Blocks/BlockSnow.h"
-#include "Blocks/BlockLeaves.h"
-#include "Blocks/BlockAir.h"
-#include "Blocks/BlockSignPost.h"
-#include "Blocks/BlockWallSign.h"
-
 #include "json/json.h"
 
+import Block.Snow;
+import Block.Leaves;
+import Block.Air;
+import Block.SignPost;
+import Block.WallSign;
 
 
 

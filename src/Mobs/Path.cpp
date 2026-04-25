@@ -6,9 +6,9 @@
 #include "../BlockInfo.h"
 #include "../Chunk.h"
 #include "../Entities/Player.h"
-#include "../Blocks/BlockFence.h"
-#include "../Blocks/BlockDoor.h"
-#include "../Blocks/BlockTrapdoor.h"
+import Block.Fence;
+import Block.Door;
+import Block.Trapdoor;
 
 #define JUMP_G_COST 20
 #define NORMAL_G_COST 10

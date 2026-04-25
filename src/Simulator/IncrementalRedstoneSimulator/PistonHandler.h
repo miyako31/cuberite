@@ -1,7 +1,7 @@
 
 #pragma once
 
-#include "../../Blocks/BlockPiston.h"
+import Block.Piston;
 
 
 

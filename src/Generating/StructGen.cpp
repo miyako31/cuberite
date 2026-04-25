@@ -8,8 +8,8 @@
 #include "../LinearUpscale.h"
 #include "../BlockInfo.h"
 
-#include "../Blocks/BlockLog.h"
-#include "../Blocks/BlockAir.h"
+import Block.Log;
+import Block.Air;
 
 
 

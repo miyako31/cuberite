@@ -15,9 +15,9 @@
 #include "Player.h"
 #include "../BoundingBox.h"
 #include "../Blocks/ChunkInterface.h"
-#include "../Blocks/BlockRail.h"
 #include "../UI/MinecartWithChestWindow.h"
 
+import Block.Rail;
 #define NO_SPEED 0.0
 #define MAX_SPEED 8
 #define MAX_SPEED_NEGATIVE -MAX_SPEED

@@ -1,12 +1,11 @@
 module;
 
 #include "ItemHandler.h"
-#include "Blocks/BlockGlazedTerracotta.h"
 #include "Registries/BlockItemConverter.h"
 #include "../Entities/Player.h"
 export module Item.GlazedTerracotta;
 import Item.SimplePlaceableItemHandler;
-
+import Block.GlazedTerracotta;
 
 
 

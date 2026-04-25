@@ -10,7 +10,7 @@
 #include "../ClientHandle.h"
 #include "../Chunk.h"
 #include "../Registries/BlockItemConverter.h"
-#include "../Blocks/BlockStandingBanner.h"
+import Block.StandingBanner;
 
 
 

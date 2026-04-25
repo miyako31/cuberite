@@ -10,6 +10,7 @@ class cBlockEntity;
 class cBroadcastInterface;
 class cItems;
 class cPlayer;
+class cBoundingBox;
 
 using cBlockEntityCallback = cFunctionRef<bool(cBlockEntity &)>;
 using cPlayerListCallback  = cFunctionRef<bool(cPlayer      &)>;

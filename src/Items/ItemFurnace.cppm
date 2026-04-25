@@ -2,10 +2,9 @@ module;
 
 
 #include "ItemHandler.h"
-#include "Blocks/BlockFurnace.h"
 export module Item.Furnace;
 import Item.SimplePlaceableItemHandler;
-
+import Block.Furnace;
 
 
 

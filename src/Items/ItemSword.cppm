@@ -3,9 +3,8 @@ module;
 
 #include "ItemHandler.h"
 #include "../BlockInfo.h"
-#include "../Blocks/BlockLeaves.h"
 export module Item.Sword;
-
+import Block.Leaves;
 
 
 

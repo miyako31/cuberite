@@ -5,10 +5,9 @@ module;
 
 
 #include "ItemHandler.h"
-#include "../Blocks/BlockAir.h"
 #include "Entities/Player.h"
 export module Item.Throwable;
-
+import Block.Air;
 
 
 

@@ -21,7 +21,7 @@
 #include "PathFinder.h"
 #include "../Entities/LeashKnot.h"
 #include "../Protocol/Palettes/Upgrade.h"
-#include "../Blocks/BlockLeaves.h"
+import Block.Leaves;
 
 import Item.SpawnEgg;
 

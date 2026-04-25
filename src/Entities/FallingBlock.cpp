@@ -7,7 +7,7 @@
 #include "../Simulator/SandSimulator.h"
 #include "../Chunk.h"
 #include "../Blocks/ChunkInterface.h"
-#include "../Blocks/BlockConcretePowder.h"
+import Block.ConcretePowder;
 
 
 

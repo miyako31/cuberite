@@ -1,7 +1,7 @@
 
 #pragma once
 
-#include "../../Blocks/BlockTripwireHook.h"
+import Block.TripwireHook;
 
 
 

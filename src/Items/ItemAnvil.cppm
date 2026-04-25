@@ -1,11 +1,10 @@
 module;
 
 #include "ItemHandler.h"
-#include "Blocks/BlockAnvil.h"
 #include "Registries/BlockItemConverter.h"
 #include "Protocol/Palettes/Upgrade.h"
 export module Item.Anvil;
-
+import Block.Anvil;
 
 
 

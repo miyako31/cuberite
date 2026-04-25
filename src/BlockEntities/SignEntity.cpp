@@ -7,7 +7,7 @@
 #include "json/value.h"
 #include "SignEntity.h"
 #include "../ClientHandle.h"
-#include "../Blocks/BlockWallSign.h"
+import Block.WallSign;
 
 
 

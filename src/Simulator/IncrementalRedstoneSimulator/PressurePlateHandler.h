@@ -3,7 +3,7 @@
 
 #include "../../BoundingBox.h"
 #include "../../Entities/Pickup.h"
-#include "../../Blocks/BlockPressurePlate.h"
+import Block.PressurePlate;
 
 
 

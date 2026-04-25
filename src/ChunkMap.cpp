@@ -20,7 +20,7 @@
 #include "Entities/Pickup.h"
 #include "DeadlockDetect.h"
 #include "BlockEntities/BlockEntity.h"
-#include "Blocks/BlockLog.h"
+import Block.Log;
 
 
 

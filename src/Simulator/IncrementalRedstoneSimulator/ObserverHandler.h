@@ -1,7 +1,7 @@
 
 #pragma once
 
-#include "../../Blocks/BlockObserver.h"
+import Block.Observer;
 
 
 

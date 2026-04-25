@@ -8,7 +8,7 @@
 #include "json/json.h"
 #include "../Entities/Player.h"
 #include "../ClientHandle.h"
-#include "../Blocks/BlockMobHead.h"
+import Block.MobHead;
 
 
 

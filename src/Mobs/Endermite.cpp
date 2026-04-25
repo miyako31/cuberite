@@ -6,7 +6,7 @@
 #include "../World.h"
 #include "../Chunk.h"
 #include "../Blocks/BlockHandler.h"
-#include "../Blocks/BlockInfested.h"
+import Block.Infested;
 
 
 

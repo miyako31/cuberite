@@ -2,12 +2,11 @@ module;
 
 
 #include "ItemHandler.h"
-#include "Blocks/BlockDropSpenser.h"
 #include "Registries/BlockItemConverter.h"
 #include "BlockEntities/BlockEntity.h"
 export module Item.DropSpenser;
 import Item.SimplePlaceableItemHandler;
-
+import Block.DropSpenser;
 
 
 

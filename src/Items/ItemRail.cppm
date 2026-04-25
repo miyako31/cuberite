@@ -2,10 +2,11 @@ module;
 
 
 #include "ItemHandler.h"
-#include "Blocks/BlockRail.h"
+#include "Blocks/ChunkInterface.h"
+#include "Registries/BlockItemConverter.h"
 export module Item.Rail;
 import Item.SimplePlaceableItemHandler;
-
+import Block.Rail;
 
 
 

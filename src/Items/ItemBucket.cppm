@@ -8,11 +8,10 @@ module;
 #include "../Blocks/BlockHandler.h"
 #include "../LineBlockTracer.h"
 #include "../Blocks/ChunkInterface.h"
-#include "Blocks/BlockFluid.h"
 #include "Blocks/BlockPluginInterface.h"
 #include "Entities/Player.h"
 export module Item.Bucket;
-
+import Block.Fluid;
 
 
 

@@ -10,13 +10,12 @@
 #include "../IniFile.h"
 #include "../EffectID.h"
 
-#include "../Blocks/BlockSlab.h"
-#include "../Blocks/BlockAnvil.h"
-#include "../Blocks/BlockConcretePowder.h"
 #include "../Protocol/Palettes/Upgrade.h"
 #include "../Registries/BlockItemConverter.h"
 
-
+import Block.Slab;
+import Block.Anvil;
+import Block.ConcretePowder;
 
 
 

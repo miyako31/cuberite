@@ -1,10 +1,9 @@
 module;
 
 #include "ItemHandler.h"
-#include "Blocks/BlockObserver.h"
 export module Item.Observer;
 import Item.SimplePlaceableItemHandler;
-
+import Block.Observer;
 
 
 

@@ -1,6 +1,7 @@
 
 #pragma once
 
+#include "BlockInfo.h"
 #include "RedstoneHandler.h"
 #include "Registries/BlockStates.h"
 

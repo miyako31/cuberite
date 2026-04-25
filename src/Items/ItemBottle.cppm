@@ -6,10 +6,9 @@ module;
 #include "LineBlockTracer.h"
 #include "../BlockInfo.h"
 #include "../World.h"
-#include "../Blocks/BlockFluid.h"
 #include "Entities/Player.h"
 export module Item.Bottle;
-
+import Block.Fluid;
 
 
 

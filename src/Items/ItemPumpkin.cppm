@@ -2,11 +2,10 @@ module;
 
 
 #include "ItemHandler.h"
-#include "Blocks/BlockPumpkin.h"
 
 export module Item.Pumpkin;
 import Item.SimplePlaceableItemHandler;
-
+import  Block.Pumpkin;
 
 
 

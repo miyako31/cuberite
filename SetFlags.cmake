@@ -175,6 +175,7 @@ function(set_exe_flags TARGET)
 			-Wno-undefined-func-template
 			-Wno-c2y-extensions
 			-Wno-decls-in-multiple-modules
+			-Wno-missing-variable-declarations
 
 			# This is a pretty useless warning, we've already got -Wswitch which is what we need:
 			-Wno-switch-enum

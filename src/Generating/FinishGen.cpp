@@ -23,11 +23,11 @@
 #include "Protocol/Palettes/Upgrade.h"
 #include "Registries/BlockItemConverter.h"
 
-#include "Blocks/BlockAir.h"
-#include "Blocks/BlockBigFlower.h"
-#include "Blocks/BlockFluid.h"
-#include "Blocks/BlockLeaves.h"
-#include "Blocks/BlockLog.h"
+import Block.Air;
+import Block.BigFlower;
+import Block.Fluid;
+import Block.Leaves;
+import Block.Log;
 
 
 

@@ -25,7 +25,6 @@
 #include "ChatColor.h"
 #include "Items/ItemHandler.h"
 #include "Blocks/BlockHandler.h"
-#include "Blocks/BlockBed.h"
 #include "Blocks/ChunkInterface.h"
 #include "BlockInServerPluginInterface.h"
 
@@ -40,6 +39,7 @@
 #include <ranges>
 
 import Item.Sword;
+import Block.Bed;
 
 /** Maximum number of explosions to send this tick, server will start dropping if exceeded. */
 #define MAX_EXPLOSIONS_PER_TICK 20

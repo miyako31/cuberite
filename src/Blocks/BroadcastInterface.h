@@ -9,6 +9,8 @@ class cClientHandle;
 class cCompositeChat;
 class cPlayer;
 class cWorld;
+class cEntity;
+class cItem;
 enum class EffectID : Int32;
 
 

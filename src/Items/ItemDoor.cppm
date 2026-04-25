@@ -1,11 +1,12 @@
 module;
 
 
+#include "BlockInfo.h"
 #include "ItemHandler.h"
 #include "../World.h"
-#include "../Blocks/BlockDoor.h"
+#include "Blocks/BlockHandler.h"
 export module Item.Door;
-
+import Block.Door;
 
 
 

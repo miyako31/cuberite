@@ -14,7 +14,7 @@
 #include "../Blocks/BlockHandler.h"
 #include "../BlockInServerPluginInterface.h"
 #include "../Blocks/ChunkInterface.h"
-#include "../Blocks/BlockFluid.h"
+import Block.Fluid;
 
 
 

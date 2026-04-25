@@ -9,7 +9,7 @@
 #include "DelayedFluidSimulator.h"
 #include "../World.h"
 #include "../Chunk.h"
-#include "Blocks/BlockFluid.h"
+import Block.Fluid;
 
 
 

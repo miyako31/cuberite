@@ -2,11 +2,10 @@ module;
 
 
 #include "ItemHandler.h"
-#include "Blocks/BlockTrapdoor.h"
 #include "Registries/BlockItemConverter.h"
 #include "Protocol/Palettes/Upgrade.h"
 export module Item.Trapdoor;
-
+import Block.Trapdoor;
 
 
 

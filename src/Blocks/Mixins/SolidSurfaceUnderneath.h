@@ -1,9 +1,10 @@
 
 #pragma once
 
+#include "BlockInfo.h"
 #include "../../Chunk.h"
-#include "../BlockSlab.h"
-#include "../BlockStairs.h"
+import Block.Slab;
+import Block.Stairs;
 
 /** Mixin to ensure the block has a solid surface underneath. */
 template <class Base>

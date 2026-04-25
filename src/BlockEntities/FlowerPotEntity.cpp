@@ -8,7 +8,7 @@
 #include "../Entities/Player.h"
 #include "../ClientHandle.h"
 #include "../Item.h"
-#include "../Blocks/BlockFlowerPot.h"
+import Block.FlowerPot;
 
 
 

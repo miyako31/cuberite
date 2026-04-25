@@ -2,10 +2,11 @@ module;
 
 
 #include "ItemHandler.h"
-#include "Blocks/BlockBed.h"
 #include "BlockEntities/BedEntity.h"
+#include "Blocks/BlockHandler.h"
 export module Item.Bed;
 import Item.SimplePlaceableItemHandler;
+import Block.Bed;
 
 
 

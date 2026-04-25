@@ -1,7 +1,7 @@
 
 #pragma once
 
-#include "../../Blocks/BlockRedstoneRepeater.h"
+import Block.RedstoneRepeater;
 
 
 

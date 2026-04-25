@@ -41,6 +41,12 @@ set_global_flags()
 build_dependencies()
 
 add_executable(${CMAKE_PROJECT_NAME})
+
+target_sources(${CMAKE_PROJECT_NAME} PUBLIC
+		FILE_SET CXX_MODULES FILES
+		BASE_DIRS ${PROJECT_SOURCE_DIR}
+)
+
 add_subdirectory(src)
 
 set_exe_flags(${CMAKE_PROJECT_NAME})

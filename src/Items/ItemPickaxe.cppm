@@ -1,12 +1,11 @@
 module;
 
 
-#include "../Blocks/BlockAnvil.h"
 #include "ItemHandler.h"
 #include "../Protocol/Palettes/Upgrade.h"
 #include "../BlockInfo.h"
 export module Item.Pickaxe;
-
+import Block.Anvil;
 
 export class cItemPickaxeHandler final:
 	public cItemHandler

@@ -1,10 +1,9 @@
 module;
 #include "ItemHandler.h"
-#include "Blocks/BlockPiston.h"
 #include "Registries/BlockItemConverter.h"
 export module Item.Piston;
 import Item.SimplePlaceableItemHandler;
-
+import Block.Piston;
 
 
 

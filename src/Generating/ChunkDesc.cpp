@@ -5,13 +5,12 @@
 
 #include "Globals.h"
 #include "ChunkDesc.h"
-#include "../Blocks/BlockAir.h"
 #include "../Noise/Noise.h"
 #include "../BlockEntities/BlockEntity.h"
 #include "../Entities/Entity.h"
 #include "BlockInfo.h"
 
-
+import Block.Air;
 
 
 

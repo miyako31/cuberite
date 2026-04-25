@@ -22,10 +22,9 @@
 #include "../EffectID.h"
 #include "../ClientHandle.h"
 #include "../Mobs/Horse.h"
-#include "../Blocks/BlockAnvil.h"
 #include "BlockInfo.h"
 
-
+import Block.Anvil;
 
 
 

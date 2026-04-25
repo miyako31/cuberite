@@ -2,7 +2,7 @@
 #pragma once
 
 #include "World.h"
-#include "../../Blocks/BlockDaylightSensor.h"
+import Block.DaylightSensor;
 
 
 

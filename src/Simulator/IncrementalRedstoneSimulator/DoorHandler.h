@@ -1,7 +1,8 @@
 
 #pragma once
 
-#include "../../Blocks/BlockDoor.h"
+import Block.Door;
+#include "Blocks/ChunkInterface.h"
 
 
 

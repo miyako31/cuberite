@@ -52,13 +52,13 @@
 #include "Blocks/BlockHandler.h"
 
 // BlockHandler
-#include "Blocks/BlockAir.h"
-#include "Blocks/BlockCommandBlock.h"
-#include "Blocks/BlockLog.h"
-#include "Blocks/BlockSapling.h"
-#include "Blocks/BlockSignPost.h"
-#include "Blocks/BlockTrapdoor.h"
-#include "Blocks/BlockWallSign.h"
+import Block.Air;
+import Block.CommandBlock;
+import Block.Log;
+import Block.Sapling;
+import Block.SignPost;
+import Block.Trapdoor;
+import Block.WallSign;
 
 
 #ifndef _WIN32

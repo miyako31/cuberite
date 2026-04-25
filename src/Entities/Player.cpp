@@ -2,6 +2,8 @@
 #include "Globals.h"  // NOTE: MSVC stupidness requires this to be the same across all modules
 
 #include "Player.h"
+
+#include "BlockInfo.h"
 #include "../Mobs/Wolf.h"
 #include "../Mobs/Horse.h"
 #include "../BoundingBox.h"
@@ -22,20 +24,18 @@
 #include "../CompositeChat.h"
 
 #include "../Blocks/BlockHandler.h"
-#include "../Blocks/BlockBed.h"
-#include "../Blocks/BlockSlab.h"
 #include "../Blocks/ChunkInterface.h"
 
 #include "../IniFile.h"
 #include "../JsonUtils.h"
 #include "json/json.h"
 
-#include "../Blocks/BlockAir.h"
-#include "../Blocks/BlockFluid.h"
-
 #include "../CraftingRecipes.h"
 
-
+import Block.Air;
+import Block.Fluid;
+import Block.Bed;
+import Block.Slab;
 
 
 

@@ -11,7 +11,7 @@
 #include "../Chunk.h"
 #include "../World.h"
 #include "../Blocks/BroadcastInterface.h"
-#include "../Blocks/BlockFluid.h"
+import Block.Fluid;
 
 
 
