@@ -37,7 +37,8 @@ jobs:
         run: |
           apk add --no-cache \
             git bash make cmake ninja build-base \
-            linux-headers curl tar
+            linux-headers curl tar \
+            python3 perl
 
       - name: Checkout Cuberite (with submodules)
         run: |
