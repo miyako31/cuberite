@@ -70,17 +70,31 @@ jobs:
 
       - name: Package build output
         id: package
-        working-directory: cuberite
         run: |
           NAME="cuberite-alpine-musl-${{ github.sha }}"
-          tar -czf "${NAME}.tar.gz" -C Server .
+          ARCHIVE_PATH="${GITHUB_WORKSPACE}/${NAME}.tar.gz"
+
+          # Archive is written to an absolute path OUTSIDE the Server
+          # directory being packaged, to avoid tar including/corrupting
+          # itself while it is still being written.
+          cd cuberite/Server
+          tar -czf "${ARCHIVE_PATH}" .
+
           echo "archive_name=${NAME}.tar.gz" >> "$GITHUB_OUTPUT"
+          echo "archive_path=${ARCHIVE_PATH}" >> "$GITHUB_OUTPUT"
+
+      - name: Verify archive contents
+        run: |
+          echo "Listing archive contents:"
+          tar -tzf "${{ steps.package.outputs.archive_path }}"
+          echo "Confirming the Cuberite binary is present:"
+          tar -tzf "${{ steps.package.outputs.archive_path }}" | grep -qx './Cuberite'
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.package.outputs.archive_name }}
-          path: cuberite/${{ steps.package.outputs.archive_name }}
+          path: ${{ steps.package.outputs.archive_path }}
           if-no-files-found: error
 
   release:
