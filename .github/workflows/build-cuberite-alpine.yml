@@ -1,0 +1,61 @@
+name: Build Cuberite (Alpine / musl)
+
+on:
+  workflow_dispatch:
+    inputs:
+      cuberite_ref:
+        description: "Cuberite branch/tag/commit to build"
+        required: false
+        default: "master"
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    name: Build on Alpine
+    runs-on: ubuntu-latest
+    container:
+      image: alpine:3.20
+
+    steps:
+      - name: Install build dependencies
+        run: |
+          apk add --no-cache \
+            git bash make cmake ninja build-base \
+            linux-headers curl tar
+
+      - name: Checkout Cuberite (with submodules)
+        run: |
+          git clone --recursive --depth 1 \
+            --branch "${{ github.event.inputs.cuberite_ref || 'master' }}" \
+            https://github.com/cuberite/cuberite.git
+
+      - name: Configure (CMake)
+        working-directory: cuberite
+        run: |
+          mkdir Release
+          cd Release
+          cmake -G Ninja \
+            -DCMAKE_BUILD_TYPE=RELEASE \
+            -DDISABLE_SYSTEM_LUA=ON \
+            ..
+
+      - name: Build
+        working-directory: cuberite/Release
+        run: ninja -j"$(nproc)"
+
+      - name: Smoke test (basic startup check)
+        working-directory: cuberite/Server
+        run: |
+          # Cuberite needs the accompanying Server directory assets next to the binary
+          timeout 5 ./Cuberite || true
+          file ./Cuberite
+          ldd ./Cuberite || true
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cuberite-alpine-musl-${{ github.sha }}
+          path: |
+            cuberite/Server
+          if-no-files-found: error
