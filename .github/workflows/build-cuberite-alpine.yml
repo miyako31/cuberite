@@ -7,15 +7,30 @@ on:
         description: "Cuberite branch/tag/commit to build"
         required: false
         default: "master"
+      publish_release:
+        description: "Publish the build as a GitHub Release"
+        required: false
+        default: "false"
+        type: boolean
   push:
     branches: [main]
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
 
 jobs:
   build:
     name: Build on Alpine
     runs-on: ubuntu-latest
+    # NOTE: build runs inside an Alpine container so the binary is linked
+    # against musl libc, not glibc.
     container:
       image: alpine:3.20
+
+    outputs:
+      archive_name: ${{ steps.package.outputs.archive_name }}
 
     steps:
       - name: Install build dependencies
@@ -52,10 +67,53 @@ jobs:
           file ./Cuberite
           ldd ./Cuberite || true
 
+      - name: Package build output
+        id: package
+        working-directory: cuberite
+        run: |
+          NAME="cuberite-alpine-musl-${{ github.sha }}"
+          tar -czf "${NAME}.tar.gz" -C Server .
+          echo "archive_name=${NAME}.tar.gz" >> "$GITHUB_OUTPUT"
+
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: cuberite-alpine-musl-${{ github.sha }}
-          path: |
-            cuberite/Server
+          name: ${{ steps.package.outputs.archive_name }}
+          path: cuberite/${{ steps.package.outputs.archive_name }}
           if-no-files-found: error
+
+  release:
+    name: Publish GitHub Release
+    needs: build
+    runs-on: ubuntu-latest
+    # This job intentionally runs OUTSIDE the Alpine container.
+    # Release-creation actions ship a glibc-linked Node runtime, which
+    # does not run correctly on musl (Alpine), so it must run on the
+    # default Ubuntu runner instead.
+    if: |
+      startsWith(github.ref, 'refs/tags/') ||
+      github.event.inputs.publish_release == 'true'
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ needs.build.outputs.archive_name }}
+          path: dist
+
+      - name: Determine release tag
+        id: tag
+        run: |
+          if [[ "${{ github.ref_type }}" == "tag" ]]; then
+            echo "tag_name=${{ github.ref_name }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag_name=manual-${{ github.run_number }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.tag_name }}
+          name: "Cuberite (Alpine/musl) - ${{ steps.tag.outputs.tag_name }}"
+          generate_release_notes: true
+          files: dist/${{ needs.build.outputs.archive_name }}
