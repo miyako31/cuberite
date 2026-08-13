@@ -32,8 +32,18 @@ jobs:
     outputs:
       archive_name: ${{ steps.package.outputs.archive_name }}
 
+    # Force bash for every step in this job. Without this, GitHub Actions
+    # may default to /bin/sh (busybox ash) inside the Alpine container,
+    # which does not understand bash-only syntax like ${PIPESTATUS[0]}.
+    defaults:
+      run:
+        shell: bash
+
     steps:
       - name: Install build dependencies
+        # bash is not installed yet at this point, so this one step must
+        # explicitly use the container's default /bin/sh (busybox ash).
+        shell: sh
         run: |
           apk add --no-cache \
             git bash make cmake ninja build-base \
