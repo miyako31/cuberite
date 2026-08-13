@@ -60,9 +60,25 @@ jobs:
       - name: Build
         working-directory: cuberite/Release
         run: |
+          echo "Memory before build:"
           free -h
-          ninja -j"$(nproc)" -v | tee ninja-build.log
+
+          set +e
+          ninja -j"$(nproc)" -v 2>&1 | tee ninja-build.log
+          NINJA_EXIT=${PIPESTATUS[0]}
+          set -e
+
+          echo "Memory after build:"
           free -h
+
+          if [ "$NINJA_EXIT" -ne 0 ]; then
+            echo "::error::ninja exited with code $NINJA_EXIT"
+            echo "Last 100 lines of the build log:"
+            tail -100 ninja-build.log
+            echo "Kernel OOM / dmesg messages (if accessible in this container):"
+            dmesg 2>&1 | tail -80 || echo "dmesg is not accessible in this environment"
+            exit "$NINJA_EXIT"
+          fi
 
       - name: Verify build output
         working-directory: cuberite
