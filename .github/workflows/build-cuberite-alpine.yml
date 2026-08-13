@@ -37,7 +37,7 @@ jobs:
         run: |
           apk add --no-cache \
             git bash make cmake ninja build-base \
-            linux-headers curl tar \
+            linux-headers curl tar file \
             python3 perl
 
       - name: Checkout Cuberite (with submodules)
@@ -58,7 +58,23 @@ jobs:
 
       - name: Build
         working-directory: cuberite/Release
-        run: ninja -j"$(nproc)"
+        run: ninja -j"$(nproc)" -v | tee ninja-build.log
+
+      - name: Verify build output
+        working-directory: cuberite
+        run: |
+          echo "Top-level contents of Server directory after build:"
+          ls -la Server/
+
+          if [ ! -f Server/Cuberite ]; then
+            echo "::error::Cuberite binary was NOT produced by the build. Checking ninja log for the link step..."
+            grep -i -E "Linking|Cuberite" Release/ninja-build.log | tail -50 || true
+            exit 1
+          fi
+
+          echo "Cuberite binary found:"
+          ls -la Server/Cuberite
+          file Server/Cuberite
 
       - name: Smoke test (basic startup check)
         working-directory: cuberite/Server
