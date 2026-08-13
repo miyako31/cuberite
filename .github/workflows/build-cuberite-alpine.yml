@@ -26,11 +26,8 @@ jobs:
     runs-on: ubuntu-latest
     # NOTE: build runs inside an Alpine container so the binary is linked
     # against musl libc, not glibc.
-    # options: --privileged is required so the container is allowed to
-    # create and enable a swap file (see "Add swap space" step below).
     container:
       image: alpine:3.20
-      options: --privileged
 
     outputs:
       archive_name: ${{ steps.package.outputs.archive_name }}
@@ -41,18 +38,7 @@ jobs:
           apk add --no-cache \
             git bash make cmake ninja build-base \
             linux-headers curl tar file \
-            python3 perl util-linux
-
-      - name: Add swap space
-        # The final LTO link step is very memory-hungry and has been
-        # observed to get OOM-killed on the standard GitHub-hosted
-        # runner. Adding swap gives it enough headroom to finish.
-        run: |
-          fallocate -l 8G /swapfile
-          chmod 600 /swapfile
-          mkswap /swapfile
-          swapon /swapfile
-          free -h
+            python3 perl
 
       - name: Checkout Cuberite (with submodules)
         run: |
